@@ -18,7 +18,7 @@ credentials = service_account.Credentials.from_service_account_info(
 gc = gspread.authorize(credentials)
 
 # Open the specific Google Sheet
-sheet = gc.open_by_key(st.secrets["SHEET_ID"]).worksheet("SvS Battle Registration")
+sheet = gc.open_by_key(st.secrets["SHEET_ID"]).worksheet("SvS Prep Ministry Buffs")
 
 # Registration Form
 with st.form("registration_form"):
@@ -27,14 +27,14 @@ with st.form("registration_form"):
     
     # Alliance Selection
     alliance = st.selectbox(
-        "What is Your Alliance?",
+        "What is Your Alliance?*",
         ["TCW", "MRA", "RFA", "SHR" , "mra" , "FOX"],
         index=0
     )
     
     # FC Level
     fc_level = st.selectbox(
-        "What is Your Current FC level?",
+        "What is Your Current FC level?*",
         ["F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
@@ -42,21 +42,21 @@ with st.form("registration_form"):
     # Speedups Information
     st.subheader("Speedups Inventory")
     general_speedups = st.number_input(
-        "How many General Speedups do you have (In Days)?",
+        "How many General Speedups do you have (In Days)?*",
         min_value=0,
         step=1,
         value=0
     )
     
     building_speedups = st.number_input(
-        "How many Building Speedups do you have (In Days)?",
+        "How many Building Speedups do you have (In Days)?*",
         min_value=0,
         step=1,
         value=0
     )
     
     training_speedups = st.number_input(
-        "How many Training Speedups do you have (In Days)?",
+        "How many Training Speedups do you have (In Days)?*",
         min_value=0,
         step=1,
         value=0
@@ -65,19 +65,19 @@ with st.form("registration_form"):
     # Troop Levels (Current)
     st.subheader("Current Troop Levels")
     infantry_level = st.selectbox(
-        "What is your current Infantry Troops level?",
+        "What is your current Infantry Troops level?*",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     lancer_level = st.selectbox(
-        "What is your current Lancer Troops level?",
+        "What is your current Lancer Troops level?*",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     marksman_level = st.selectbox(
-        "What is your current Marksman Troops level?",
+        "What is your current Marksman Troops level?*",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
@@ -85,33 +85,46 @@ with st.form("registration_form"):
     # Training Goals During Prep
     st.subheader("Training Goals During Prep Phase")
     fc_goal = st.selectbox(
-        "Which FC Level you are going for During SvS prep?",
+        "Which FC Level you are going for During SvS prep?*",
         ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     infantry_goal = st.selectbox(
-        "Which FC Infantry Level will you be training During Prep Phase?",
+        "Which FC Infantry Level will you be training During Prep Phase?*",
         ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     marksman_goal = st.selectbox(
-        "Which FC Marksman Level will you be training During Prep Phase?",
+        "Which FC Marksman Level will you be training During Prep Phase?*",
         ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     lancer_goal = st.selectbox(
-        "Which FC Lancer Level will you be training During Prep Phase?",
+        "Which FC Lancer Level will you be training During Prep Phase?*",
         ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     # Preferred timing for ministry buff
     buff_timing = st.selectbox(
-        "What is your Preferred timing For ministry Buff?",
-        ["12:00 UTC", "13:00 UTC", "14:00 UTC", "15:00 UTC", "16:00 UTC", "17:00 UTC", "18:00 UTC"],
+        "What is your Preferred time zone For ministry Buff?*",
+        [
+            "00:00 UTC to 02:00 UTC",
+            "02:00 UTC to 04:00 UTC",
+            "04:00 UTC to 06:00 UTC",
+            "06:00 UTC to 08:00 UTC",
+            "08:00 UTC to 10:00 UTC",
+            "10:00 UTC to 12:00 UTC",
+            "12:00 UTC to 14:00 UTC",
+            "14:00 UTC to 16:00 UTC",
+            "16:00 UTC to 18:00 UTC",
+            "18:00 UTC to 20:00 UTC",
+            "20:00 UTC to 22:00 UTC",
+            "22:00 UTC to 23:59 UTC"
+        ],
         index=0
     )
     
