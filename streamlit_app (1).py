@@ -27,14 +27,14 @@ with st.form("registration_form"):
     
     # Alliance Selection
     alliance = st.selectbox(
-        "What is Your Alliance?*",
+        "What is Your Alliance?",
         ["TCW", "MRA", "RFA", "SHR" , "mra" , "FOX"],
         index=0
     )
     
     # FC Level
     fc_level = st.selectbox(
-        "What is Your Current FC level?*",
+        "What is Your Current FC level?",
         ["F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
@@ -85,32 +85,32 @@ with st.form("registration_form"):
     # Training Goals During Prep
     st.subheader("Training Goals During Prep Phase")
     fc_goal = st.selectbox(
-        "Which FC Level you are going for During SvS prep?*",
+        "Which FC Level you are going for During SvS prep?",
         ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     infantry_goal = st.selectbox(
-        "Which FC Infantry Level will you be training During Prep Phase?*",
+        "Which FC Infantry Level will you be training During Prep Phase?",
         ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     marksman_goal = st.selectbox(
-        "Which FC Marksman Level will you be training During Prep Phase?*",
+        "Which FC Marksman Level will you be training During Prep Phase?",
         ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     lancer_goal = st.selectbox(
-        "Which FC Lancer Level will you be training During Prep Phase?*",
+        "Which FC Lancer Level will you be training During Prep Phase?",
         ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     # Preferred timing for ministry buff
     buff_timing = st.selectbox(
-        "What is your Preferred timing For ministry Buff?*",
+        "What is your Preferred timing For ministry Buff?",
         ["12:00 UTC", "13:00 UTC", "14:00 UTC", "15:00 UTC", "16:00 UTC", "17:00 UTC", "18:00 UTC"],
         index=0
     )
