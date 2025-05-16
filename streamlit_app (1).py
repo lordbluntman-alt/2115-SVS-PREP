@@ -28,7 +28,7 @@ with st.form("registration_form"):
     # Alliance Selection
     alliance = st.selectbox(
         "What is Your Alliance?*",
-        ["TCW", "MRA", "RFA", "SHR" , "mra" , "FOX"],
+        ["TCW", "MRA", "RFA", "SHR" , "mra" , "FOX" , "ROK" , "ANT" , "TWN" , "DIU" ],
         index=0
     )
     
