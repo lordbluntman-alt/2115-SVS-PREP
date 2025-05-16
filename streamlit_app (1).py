@@ -32,6 +32,13 @@ with st.form("registration_form"):
         index=0
     )
     
+    # Ministry Buff Selection
+    ministry_buff = st.multiselect(
+        "Which ministry Buff do You want?",
+        ["Vice President", "Ministry of Education"],
+        default=["Vice President"]
+    )
+    
     # FC Level
     fc_level = st.selectbox(
         "What is Your Current FC level?*",
@@ -141,6 +148,7 @@ with st.form("registration_form"):
                 timestamp,
                 player_name,
                 alliance,
+                ", ".join(ministry_buff),  # Convert list to comma-separated string
                 fc_level,
                 general_speedups,
                 building_speedups,
