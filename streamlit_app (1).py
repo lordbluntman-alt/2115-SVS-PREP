@@ -8,7 +8,7 @@ import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 # Main app structure
-st.title("SvS Prep Phase")
+st.title("SFC Battle Registration")
 
 # Google Sheets connection setup
 credentials = service_account.Credentials.from_service_account_info(
@@ -18,7 +18,7 @@ credentials = service_account.Credentials.from_service_account_info(
 gc = gspread.authorize(credentials)
 
 # Open the specific Google Sheet
-sheet = gc.open_by_key(st.secrets["SHEET_ID"]).worksheet("SvS Prep Ministry Buffs")
+sheet = gc.open_by_key(st.secrets["SHEET_ID"]).worksheet("SvS Battle Registration")
 
 # Registration Form
 with st.form("registration_form"):
@@ -28,33 +28,83 @@ with st.form("registration_form"):
     # Alliance Selection
     alliance = st.selectbox(
         "What is Your Alliance?*",
-        ["TCW", "MRA", "RFA", "SHR" , "mra" , "FOX" , "ANT" , "ROK" , "TWN"],
+        ["TCW", "MRA", "RFA", "SHR" , "mra" , "FOX"],
         index=0
     )
     
     # FC Level
     fc_level = st.selectbox(
-        "What is Your FC level?*",
+        "What is Your Current FC level?*",
         ["F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
-    # Troop Levels
+    # Speedups Information
+    st.subheader("Speedups Inventory")
+    general_speedups = st.number_input(
+        "How many General Speedups do you have (In Days)?*",
+        min_value=0,
+        step=1,
+        value=0
+    )
+    
+    building_speedups = st.number_input(
+        "How many Building Speedups do you have (In Days)?*",
+        min_value=0,
+        step=1,
+        value=0
+    )
+    
+    training_speedups = st.number_input(
+        "How many Training Speedups do you have (In Days)?*",
+        min_value=0,
+        step=1,
+        value=0
+    )
+    
+    # Troop Levels (Current)
+    st.subheader("Current Troop Levels")
     infantry_level = st.selectbox(
-        "What is your Infantry Troops level?*",
+        "What is your current Infantry Troops level?*",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     lancer_level = st.selectbox(
-        "What is your Lancer Troops level?*",
+        "What is your current Lancer Troops level?*",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     marksman_level = st.selectbox(
-        "What is your Marksman Troops level?*",
+        "What is your current Marksman Troops level?*",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
+        index=0
+    )
+    
+    # Training Goals During Prep
+    st.subheader("Training Goals During Prep Phase")
+    fc_goal = st.selectbox(
+        "Which FC Level you are going for During SvS prep?*",
+        ["FC1", "FC2", "FC3", "FC4", "FC5"],
+        index=0
+    )
+    
+    infantry_goal = st.selectbox(
+        "Which FC Infantry Level will you be training During Prep Phase?*",
+        ["FC1", "FC2", "FC3", "FC4", "FC5"],
+        index=0
+    )
+    
+    marksman_goal = st.selectbox(
+        "Which FC Marksman Level will you be training During Prep Phase?*",
+        ["FC1", "FC2", "FC3", "FC4", "FC5"],
+        index=0
+    )
+    
+    lancer_goal = st.selectbox(
+        "Which FC Lancer Level will you be training During Prep Phase?*",
+        ["FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
@@ -79,9 +129,16 @@ with st.form("registration_form"):
                 player_name,
                 alliance,
                 fc_level,
+                general_speedups,
+                building_speedups,
+                training_speedups,
                 infantry_level,
                 lancer_level,
                 marksman_level,
+                fc_goal,
+                infantry_goal,
+                marksman_goal,
+                lancer_goal,
                 buff_timing
             ]
             
