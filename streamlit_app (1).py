@@ -8,7 +8,7 @@ import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 # Main app structure
-st.title("2089 STATE TRANSFER REGISTRATION")
+st.title("SvS Prep Phase")
 
 # Google Sheets connection setup
 credentials = service_account.Credentials.from_service_account_info(
@@ -18,7 +18,7 @@ credentials = service_account.Credentials.from_service_account_info(
 gc = gspread.authorize(credentials)
 
 # Open the specific Google Sheet
-sheet = gc.open_by_key(st.secrets["SHEET_ID"]).worksheet("Transfer")
+sheet = gc.open_by_key(st.secrets["SHEET_ID"]).worksheet("SvS Battle Registration")
 
 # Registration Form
 with st.form("registration_form"):
@@ -26,19 +26,10 @@ with st.form("registration_form"):
     player_name = st.text_input("Enter your in-game name*", key="player_name")
     
     # Alliance Selection
-    alliance = st.text_input("What is Your Current Alliance?*", key="alliance")
-    
-    # New fields
-    reason_for_leaving = st.text_input("What is the Reason for leaving your original state?", key="reason_for_leaving")
-    planned_alliance = st.text_input("Which alliance are you planning to join?", key="planned_alliance")
-    
-    # Power input with number validation
-    power = st.number_input(
-        "What is your power?*",
-        min_value=0.0,
-        format="%.2f",
-        step=0.01,
-        key="power"
+    alliance = st.selectbox(
+        "What is Your Alliance?*",
+        ["TCW", "MRA", "RFA", "SHR" , "mra" , "FOX" , "ANT" , "ROK" , "TWN"],
+        index=0
     )
     
     # FC Level
@@ -67,16 +58,19 @@ with st.form("registration_form"):
         index=0
     )
     
+    # Preferred timing for ministry buff
+    buff_timing = st.selectbox(
+        "What is your Preferred timing For ministry Buff?*",
+        ["12:00 UTC", "13:00 UTC", "14:00 UTC", "15:00 UTC", "16:00 UTC", "17:00 UTC", "18:00 UTC"],
+        index=0
+    )
+    
     # Submit Button
     submitted = st.form_submit_button("Submit Registration")
     
     if submitted:
         if not player_name:
             st.error("Please enter your in-game name")
-        elif not alliance:
-            st.error("Please enter your current alliance name")
-        elif power <= 0:
-            st.error("Please enter a valid power value (greater than 0)")
         else:
             # Prepare the data row
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -84,13 +78,11 @@ with st.form("registration_form"):
                 timestamp,
                 player_name,
                 alliance,
-                reason_for_leaving,
-                planned_alliance,
-                f"{power:.2f}",  # Format power to 2 decimal places
                 fc_level,
                 infantry_level,
                 lancer_level,
-                marksman_level
+                marksman_level,
+                buff_timing
             ]
             
             try:
@@ -100,15 +92,3 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
-
-# Add credit to STRIKE at the bottom of the page
-st.markdown("---")  # Horizontal line for separation
-st.markdown(
-    """
-    <div style="text-align: center; padding: 20px; background-color: #0E1117; border-radius: 10px;">
-        <h3 style="color: #ffffff;">Developed by STRIKE</h3>
-        <p style="color: #ffffff;">For alliance management and state transfer coordination</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
