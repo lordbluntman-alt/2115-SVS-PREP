@@ -42,21 +42,21 @@ with st.form("registration_form"):
     # Speedups Information
     st.subheader("Speedups Inventory")
     general_speedups = st.number_input(
-        "How many General Speedups do you have (In Days)?*",
+        "How many General Speedups do you have (In Days)?",
         min_value=0,
         step=1,
         value=0
     )
     
     building_speedups = st.number_input(
-        "How many Building Speedups do you have (In Days)?*",
+        "How many Building Speedups do you have (In Days)?",
         min_value=0,
         step=1,
         value=0
     )
     
     training_speedups = st.number_input(
-        "How many Training Speedups do you have (In Days)?*",
+        "How many Training Speedups do you have (In Days)?",
         min_value=0,
         step=1,
         value=0
@@ -65,19 +65,19 @@ with st.form("registration_form"):
     # Troop Levels (Current)
     st.subheader("Current Troop Levels")
     infantry_level = st.selectbox(
-        "What is your current Infantry Troops level?*",
+        "What is your current Infantry Troops level?",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     lancer_level = st.selectbox(
-        "What is your current Lancer Troops level?*",
+        "What is your current Lancer Troops level?",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     marksman_level = st.selectbox(
-        "What is your current Marksman Troops level?*",
+        "What is your current Marksman Troops level?",
         ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
