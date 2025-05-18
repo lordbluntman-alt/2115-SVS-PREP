@@ -10,6 +10,21 @@ os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 # Main app structure
 st.title("SvS Ministry Buffs Registration")
 
+# Important Note and Caution
+st.warning("""
+**State buffs plan**  
+19-May Monday: Construction  
+22-May Thursday: Training  
+23-May Friday: Research  
+""")
+
+st.error("""
+**CAUTION:**  
+- Ensure you have sufficient resources to fully maximize the score  
+- Scores will be monitored  
+- **REGISTRATION CLOSE: 2000 UTC 18/May**  
+""")
+
 # Google Sheets connection setup
 credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
