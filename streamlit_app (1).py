@@ -42,7 +42,7 @@ with st.form("registration_form"):
     # FC Level
     fc_level = st.selectbox(
         "What is Your Current FC level?*",
-        ["F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["F26","F27","F28","F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
@@ -73,19 +73,19 @@ with st.form("registration_form"):
     st.subheader("Current Troop Levels")
     infantry_level = st.selectbox(
         "What is your current Infantry Troops level?*",
-        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["T9","T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     lancer_level = st.selectbox(
         "What is your current Lancer Troops level?*",
-        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["T9","T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     marksman_level = st.selectbox(
         "What is your current Marksman Troops level?*",
-        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["T9","T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
@@ -93,25 +93,25 @@ with st.form("registration_form"):
     st.subheader("Training Goals During Prep Phase")
     fc_goal = st.selectbox(
         "Which FC Level you are going for During SvS prep?*",
-        ["FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     infantry_goal = st.selectbox(
         "Which FC Infantry Level will you be training During Prep Phase?*",
-        ["FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     marksman_goal = st.selectbox(
         "Which FC Marksman Level will you be training During Prep Phase?*",
-        ["FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
     lancer_goal = st.selectbox(
         "Which FC Lancer Level will you be training During Prep Phase?*",
-        ["FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
