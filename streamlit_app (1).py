@@ -20,10 +20,11 @@ st.warning("""
 
 st.error("""
 **CAUTION:**  
-- Ensure you have sufficient resources to fully maximize the score  
-- Scores will be monitored  
-- **REGISTRATION CLOSE: 2000 UTC 18/May**  
+- Resource Preparation: Ensure you have sufficient resources to fully maximize your score  
+- Fair Participation: Scores will be actively monitored. If you are assigned the buff, please contribute fairly to maintain equity for all participants. Your cooperation is greatly appreciated  
+- **Registration Deadline: Registration closes at 2000 UTC on 18th May**  
 """)
+
 
 # Google Sheets connection setup
 credentials = service_account.Credentials.from_service_account_info(
