@@ -13,16 +13,16 @@ st.title("SvS Ministry Buffs Registration")
 # Important Note and Caution
 st.warning("""
 **State buffs plan**  
-19-May Monday: Construction  
-22-May Thursday: Training  
-23-May Friday: Research  
+16-June Monday: Construction  
+19-June Thursday: Training  
+20-June Friday: Research  
 """)
 
 st.error("""
 **CAUTION:**  
 - Resource Preparation: Ensure you have sufficient resources to fully maximize your score  
 - Fair Participation: Scores will be actively monitored. If you are assigned the buff, please contribute fairly to maintain equity for all participants. Your cooperation is greatly appreciated  
-- **Registration Deadline: Registration closes at 12:00 UTC on 21th May**  
+- **Registration Deadline: Registration closes at 12:00 UTC on 18th June**  
 """)
 
 
@@ -51,8 +51,8 @@ with st.form("registration_form"):
     # Ministry Buff Selection
     ministry_buff = st.multiselect(
         "Which ministry Buff do You want?",
-        ["Vice President", "Ministry of Education"],
-        default=["Vice President"]
+        [, "Ministry of Education"],
+        default=["Ministry of Education"]
     )
     
     # FC Level
