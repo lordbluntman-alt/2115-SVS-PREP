@@ -51,7 +51,7 @@ with st.form("registration_form"):
     # Ministry Buff Selection
     ministry_buff = st.multiselect(
         "Which ministry Buff do You want?",
-        [, "Ministry of Education"],
+        ["Ministry of Education"],
         default=["Ministry of Education"]
     )
     
