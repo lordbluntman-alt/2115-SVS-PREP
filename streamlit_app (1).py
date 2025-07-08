@@ -51,8 +51,8 @@ with st.form("registration_form"):
     # Ministry Buff Selection
     ministry_buff = st.multiselect(
         "Which ministry Buff do You want?",
-        ["Vice President" , "Ministry of Education"],
-        default=["Ministry of Education"]
+        ["Vice President" ],
+        default=["Vice President"]
     )
     
     # FC Level
