@@ -13,16 +13,16 @@ st.title("SvS Ministry Buffs Registration")
 # Important Note and Caution
 st.warning("""
 **State buffs plan**  
-16-June Monday: Construction  
-19-June Thursday: Training  
-20-June Friday: Research  
+14-July Monday: Construction  
+17-June Thursday: Training  
+18-June Friday: Research  
 """)
 
 st.error("""
 **CAUTION:**  
 - Resource Preparation: Ensure you have sufficient resources to fully maximize your score  
 - Fair Participation: Scores will be actively monitored. If you are assigned the buff, please contribute fairly to maintain equity for all participants. Your cooperation is greatly appreciated  
-- **Registration Deadline: Registration closes at 12:00 UTC on 18th June**  
+- **Registration Deadline: Registration closes at 12:00 UTC on 13th July**  
 """)
 
 
@@ -44,21 +44,21 @@ with st.form("registration_form"):
     # Alliance Selection
     alliance = st.selectbox(
         "What is Your Alliance?*",
-        ["TCW", "MRA", "RFA", "SHR" , "mra" , "FOX" , "ROK" , "ANT" , "TWN" , "DIU" ],
+        ["TCW", "MRA", "FOX", "SHR" ,"mra", "CCB" , "RFA" , "GoR" , "DIU"],
         index=0
     )
     
     # Ministry Buff Selection
     ministry_buff = st.multiselect(
         "Which ministry Buff do You want?",
-        ["Ministry of Education"],
+        ["Vice President" , "Ministry of Education"],
         default=["Ministry of Education"]
     )
     
     # FC Level
     fc_level = st.selectbox(
         "What is Your Current FC level?*",
-        ["F26","F27","F28","F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["F28","F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
         index=0
     )
     
