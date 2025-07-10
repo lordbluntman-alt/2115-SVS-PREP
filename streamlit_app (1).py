@@ -40,6 +40,7 @@ sheet = gc.open_by_key(st.secrets["SHEET_ID"]).worksheet("SvS Prep Ministry Buff
 with st.form("registration_form"):
     # Player Information
     player_name = st.text_input("Enter your in-game name*", key="player_name")
+    game_id = st.text_input("Enter Your Game ID*", key="game_id")
     
     # Alliance Selection
     alliance = st.selectbox(
@@ -78,57 +79,18 @@ with st.form("registration_form"):
         value=0
     )
     
-    training_speedups = st.number_input(
-        "How many Training Speedups do you have (In Days)?*",
+    research_speedups = st.number_input(
+        "How many Research Speedups do you have (In Days)?*",
         min_value=0,
         step=1,
         value=0
     )
     
-    # Troop Levels (Current)
-    st.subheader("Current Troop Levels")
-    infantry_level = st.selectbox(
-        "What is your current Infantry Troops level?*",
-        ["T9","T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
-        index=0
-    )
-    
-    lancer_level = st.selectbox(
-        "What is your current Lancer Troops level?*",
-        ["T9","T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
-        index=0
-    )
-    
-    marksman_level = st.selectbox(
-        "What is your current Marksman Troops level?*",
-        ["T9","T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
-        index=0
-    )
-    
-    # Training Goals During Prep
-    st.subheader("Training Goals During Prep Phase")
-    fc_goal = st.selectbox(
-        "Which FC Level you are going for During SvS prep?*",
-        ["F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
-        index=0
-    )
-    
-    infantry_goal = st.selectbox(
-        "Which FC Infantry Level will you be training During Prep Phase?*",
-        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
-        index=0
-    )
-    
-    marksman_goal = st.selectbox(
-        "Which FC Marksman Level will you be training During Prep Phase?*",
-        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
-        index=0
-    )
-    
-    lancer_goal = st.selectbox(
-        "Which FC Lancer Level will you be training During Prep Phase?*",
-        ["T10", "FC1", "FC2", "FC3", "FC4", "FC5"],
-        index=0
+    fc_count = st.number_input(
+        "How many FCs Do you have?*",
+        min_value=0,
+        step=1,
+        value=0
     )
     
     # Preferred timing for ministry buff
@@ -155,27 +117,22 @@ with st.form("registration_form"):
     submitted = st.form_submit_button("Submit Registration")
     
     if submitted:
-        if not player_name:
-            st.error("Please enter your in-game name")
+        if not player_name or not game_id:
+            st.error("Please enter your in-game name and Game ID")
         else:
             # Prepare the data row
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             new_row = [
                 timestamp,
                 player_name,
+                game_id,
                 alliance,
                 ", ".join(ministry_buff),  # Convert list to comma-separated string
                 fc_level,
                 general_speedups,
                 building_speedups,
-                training_speedups,
-                infantry_level,
-                lancer_level,
-                marksman_level,
-                fc_goal,
-                infantry_goal,
-                marksman_goal,
-                lancer_goal,
+                research_speedups,
+                fc_count,
                 buff_timing
             ]
             
