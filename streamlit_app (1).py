@@ -116,7 +116,6 @@ with st.form("registration_form"):
                 player_name,
                 game_id,
                 alliance,
-                ", ".join(ministry_buff),  # Convert list to comma-separated string
                 fc_level,
                 general_speedups,
                 building_speedups,
