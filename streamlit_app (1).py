@@ -73,12 +73,7 @@ with st.form("registration_form"):
         value=0
     )
     
-    research_speedups = st.number_input(
-        "How many Research Speedups do you have (In Days)?*",
-        min_value=0,
-        step=1,
-        value=0
-    )
+
     
     fc_count = st.number_input(
         "How many FCs do you have?*",
