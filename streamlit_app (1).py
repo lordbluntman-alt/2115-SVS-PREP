@@ -87,7 +87,7 @@ with st.form("registration_form"):
     )
     
     fc_count = st.number_input(
-        "How many FCs Do you have?*",
+        "How many FCs do you have?*",
         min_value=0,
         step=1,
         value=0
