@@ -119,7 +119,6 @@ with st.form("registration_form"):
                 fc_level,
                 general_speedups,
                 building_speedups,
-                research_speedups,
                 fc_count,
                 buff_timing
             ]
