@@ -8,7 +8,7 @@ import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 # Main app structure
-st.title("SvS Ministry Buffs Registration")
+st.title("VP BUff Registration")
 
 # Important Note and Caution
 st.warning("""
@@ -64,7 +64,7 @@ with st.form("registration_form"):
     )
     
     # Speedups Information
-    st.subheader("Speedups Inventory")
+    st.subheader("Inventory")
     general_speedups = st.number_input(
         "How many General Speedups do you have (In Days)?*",
         min_value=0,
