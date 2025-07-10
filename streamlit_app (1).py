@@ -8,7 +8,7 @@ import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 # Main app structure
-st.title("VP BUff Registration")
+st.title("VP Registration (Construction)")
 
 # Important Note and Caution
 st.warning("""
