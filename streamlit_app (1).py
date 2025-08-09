@@ -13,16 +13,16 @@ st.title("VP Registration (Construction)")
 # Important Note and Caution
 st.warning("""
 **State buffs plan**  
-14-July Monday: Construction  
-17-June Thursday: Training  
-18-June Friday: Research  
+11-Aug Monday: Construction  
+14-Aug Thursday: Training  
+15-Aug Friday: Research  
 """)
 
 st.error("""
 **CAUTION:**  
 - Resource Preparation: Ensure you have sufficient resources to fully maximize your score  
 - Fair Participation: Scores will be actively monitored. If you are assigned the buff, please contribute fairly to maintain equity for all participants. Your cooperation is greatly appreciated  
-- **Registration Deadline: Registration closes at 12:00 UTC on 13th July**  
+- **Registration Deadline: Registration closes at 12:00 UTC on 10th Aug**  
 """)
 
 
@@ -130,3 +130,4 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
