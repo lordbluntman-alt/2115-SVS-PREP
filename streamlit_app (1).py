@@ -83,6 +83,13 @@ with st.form("registration_form"):
         value=0
     )
     
+    refined_fc_count = st.number_input(
+        "How many Refined FCs do you have?*",
+        min_value=0,
+        step=1,
+        value=0
+    )
+    
     # Preferred timing for ministry buff
     buff_timing = st.selectbox(
         "What is your Preferred time zone For ministry Buff?*",
@@ -121,6 +128,7 @@ with st.form("registration_form"):
                 general_speedups,
                 building_speedups,
                 fc_count,
+                refined_fc_count,
                 buff_timing
             ]
             
@@ -131,13 +139,3 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
-
-
-
-
-
-
-
-
-
-
