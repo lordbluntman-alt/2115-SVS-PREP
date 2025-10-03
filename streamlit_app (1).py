@@ -13,9 +13,9 @@ st.title("VP Registration (Construction)")
 # Important Note and Caution
 st.warning("""
 **State buffs plan**  
-8-Sep Monday : Construction                 
-9-Sep Tuesday : Research  
-11-Sep Thursday: Training  
+10-Oct Monday : Construction                 
+11-Oct Tuesday : Research  
+13-Oct Thursday: Training  
   
 """)
 
@@ -131,6 +131,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
