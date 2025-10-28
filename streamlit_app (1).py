@@ -8,7 +8,7 @@ import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 # Main app structure
-st.title("Position Registration (All Days)")
+st.title("2115 Ministry Position Registration Request (All Days)")
 
 # Important Note and Caution
 st.warning("""
@@ -168,6 +168,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
