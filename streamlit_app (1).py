@@ -13,9 +13,10 @@ st.title("VP Registration (Construction)")
 # Important Note and Caution
 st.warning("""
 **State buffs plan**  
-10-Oct Monday : Construction                 
-11-Oct Tuesday : Research  
-13-Oct Thursday: Training  
+03-Nov Monday : Construction                 
+04-Nov Tuesday : Research  
+06-Nov Thursday: Training
+07-Nov Friday: Final Day  
   
 """)
 
@@ -23,7 +24,7 @@ st.error("""
 **CAUTION:**  
 - Resource Preparation: Ensure you have sufficient resources to fully maximize your score  
 - Fair Participation: Scores will be actively monitored. If you are assigned the buff, please contribute fairly to maintain equity for all participants. Your cooperation is greatly appreciated  
-- **Registration Deadline: Registration closes at 12:00 UTC on 9th Oct**  
+- **Registration Deadline: Registration closes at 12:00 UTC on 2nd Nov**  
 """)
 
 
@@ -44,10 +45,10 @@ with st.form("registration_form"):
     player_name = st.text_input("Enter your in-game name*", key="player_name")
     game_id = st.text_input("Enter Your Game ID*", key="game_id")
     
-    # Alliance Selection
+# Alliance Selection
     alliance = st.selectbox(
         "What is Your Alliance?*",
-        ["TCW", "EFE", "MRA", "FOX" ,"SHR", "MMD" ],
+        ["FBR", "LAT", "CON", "WLX" ,"NWN", "Bluntman is Sexy" ],
         index=0
     )
     
@@ -55,7 +56,7 @@ with st.form("registration_form"):
     # FC Level
     fc_level = st.selectbox(
         "What is Your Current FC level?*",
-        ["F28","F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5"],
+        ["F28","F29","F30", "FC1", "FC2", "FC3", "FC4", "FC5", "FC6","FC7","FC8"],
         index=0
     )
     
@@ -140,6 +141,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
