@@ -8,7 +8,7 @@ import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 # Main app structure
-st.title("VP Registration (Construction)")
+st.title("Position Registration (All Days)")
 
 # Important Note and Caution
 st.warning("""
@@ -22,9 +22,9 @@ st.warning("""
 
 st.error("""
 **CAUTION:**  
-- Resource Preparation: Ensure you have sufficient resources to fully maximize your score  
-- Fair Participation: Scores will be actively monitored. If you are assigned the buff, please contribute fairly to maintain equity for all participants. Your cooperation is greatly appreciated  
-- **Registration Deadline: Registration closes at 12:00 UTC on 2nd Nov**  
+- Resource Preparation: Ensure you have sufficient resources to fully maximize your score. Always gather!   
+- Fair Participation: If you are assigned the buff, please contribute fairly to maintain equity for all participants. Your contribution is greatly appreciated.  
+- **Registration Deadline: Registration closes at 12:00 UTC on 2nd Nov** 
 """)
 
 
@@ -91,7 +91,30 @@ with st.form("registration_form"):
         step=1,
         value=0
     )
-    
+   # Construction Day
+    fc_level = st.selectbox(
+        "Do you want VP on day 1?*",
+        ["No","Yes"],
+        index=0
+    ) 
+     # Research Day
+    fc_level = st.selectbox(
+        "Do you want VP on day 2 for research?*",
+        ["No","Yes"],
+        index=0
+    ) 
+     # Troops for the meat grinder Day
+    fc_level = st.selectbox(
+        "Do you want Education on day 4?*",
+        ["No","Yes"],
+        index=0
+    ) 
+     # Final Day Day
+    fc_level = st.selectbox(
+        "Do you want VP on day 5 to finish construction and research?*",
+        ["No","Yes"],
+        index=0
+    )  
     # Preferred timing for ministry buff
     buff_timing = st.selectbox(
         "What is your Preferred time zone For ministry Buff?*",
@@ -141,6 +164,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
