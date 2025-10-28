@@ -36,7 +36,7 @@ gc = gspread.authorize(credentials)
 
 # Open the specific Google Sheet
 #sheet = gc.open_by_key(st.secrets["SHEET_ID"]).worksheet("SVS Prep Spreadsheet")
-sheet = gc.open_by_key(st.secrets["1PfVQM8ckHdSQGYQTRVT_XghNO9VXGMc9xBsfxlip8Nw"]).worksheet("SVS Prep Spreadsheet")
+sheet = gc.open_by_key("1PfVQM8ckHdSQGYQTRVT_XghNO9VXGMc9xBsfxlip8Nw").worksheet("SVS Prep Spreadsheet")
 
 # Registration Form
 with st.form("registration_form"):
@@ -140,6 +140,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
