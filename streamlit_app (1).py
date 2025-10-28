@@ -15,7 +15,7 @@ st.warning("""
 **State buffs plan**  
 03-Nov Monday : Construction                 
 04-Nov Tuesday : Research   
-06-Nov Thursday: Training 
+06-Nov Thursday: Training   
 07-Nov Friday: Final Day  
   
 """)
@@ -141,6 +141,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
