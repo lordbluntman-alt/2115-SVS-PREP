@@ -92,25 +92,25 @@ with st.form("registration_form"):
         value=0
     )
    # Construction Day
-    fc_level = st.selectbox(
-        "Do you want VP on day 1?*",
+    day_1 = st.selectbox(
+        "Do you want VP for construction on day 1?*",
         ["No","Yes"],
         index=0
     ) 
      # Research Day
-    fc_level = st.selectbox(
+    day_2 = st.selectbox(
         "Do you want VP on day 2 for research?*",
         ["No","Yes"],
         index=0
     ) 
      # Troops for the meat grinder Day
-    fc_level = st.selectbox(
-        "Do you want Education on day 4?*",
+    day_4 = st.selectbox(
+        "Do you want Minister of Education on day 4 to make more troops for the meat grinder?*",
         ["No","Yes"],
         index=0
     ) 
      # Final Day Day
-    fc_level = st.selectbox(
+    day_5 = st.selectbox(
         "Do you want VP on day 5 to finish construction and research?*",
         ["No","Yes"],
         index=0
@@ -154,6 +154,10 @@ with st.form("registration_form"):
                 building_speedups,
                 fc_count,
                 refined_fc_count,
+                day_1,
+                day_2,
+                day_4,
+                day_5,
                 buff_timing
             ]
             
@@ -164,6 +168,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
