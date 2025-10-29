@@ -173,7 +173,7 @@ with st.form("registration_form"):
                 day_2,
                 day_4,
                 day_5,
-                buff_timing
+                buff_timing,
                 bad_timing
             ]
             
@@ -184,6 +184,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
