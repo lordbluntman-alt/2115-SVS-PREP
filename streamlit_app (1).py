@@ -24,6 +24,7 @@ st.error("""
 **CAUTION:**  
 - Resource Preparation: Ensure you have sufficient resources to fully maximize your score. Always gather!   
 - Fair Participation: If you are assigned the buff, please contribute fairly to maintain equity for all participants. Your contribution is greatly appreciated.  
+- We will do our best to align you with your preferred time. But we cannot guarantee the slot will be available. If you have concerns, please reach out through your R5/R4s.  
 - **Registration Deadline: Registration closes at 12:00 UTC on 2nd Nov** 
 """)
 
@@ -59,7 +60,10 @@ with st.form("registration_form"):
         ["FC8","FC7","FC6", "FC5", "FC4", "FC3", "FC2", "FC1", "F30","Less than F30"],
         index=0
     )
-    
+  st.warning("""
+   If you don’t know how many speed ups you have, it’s OKAY. Please enter “0”, and submit your request anyway.
+""")
+
     # Speedups Information
     st.subheader("Inventory")
     general_speedups = st.number_input(
@@ -168,6 +172,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
