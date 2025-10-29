@@ -122,7 +122,6 @@ with st.form("registration_form"):
     buff_timing = st.selectbox(
         "What is your Preferred time zone For ministry Buff?*",
         [
-            "02:00 UTC to 04:00 UTC",
             "04:00 UTC to 06:00 UTC",
             "06:00 UTC to 08:00 UTC",
             "08:00 UTC to 10:00 UTC",
@@ -183,6 +182,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
