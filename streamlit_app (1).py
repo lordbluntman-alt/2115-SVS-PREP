@@ -60,7 +60,7 @@ with st.form("registration_form"):
         ["FC8","FC7","FC6", "FC5", "FC4", "FC3", "FC2", "FC1", "F30","Less than F30"],
         index=0
     )
-  st.warning("""If you don’t know how many speed ups you have, it’s OKAY. Please enter “0”, and submit your request anyway.""")
+    st.warning("""If you don’t know how many speed ups you have, it’s OKAY. Please enter “0”, and submit your request anyway.""")
 
     # Speedups Information
     st.subheader("Inventory")
@@ -170,6 +170,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
