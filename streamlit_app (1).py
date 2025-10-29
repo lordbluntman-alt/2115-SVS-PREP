@@ -64,6 +64,7 @@ with st.form("registration_form"):
 
     # Speedups Information
     st.subheader("Inventory")
+    st.warning("""If you don’t know how many speed ups you have, it’s OKAY. Please enter “0”, and submit your request anyway.""")
     general_speedups = st.number_input(
         "How many General Speedups do you have (In Days)?*",
         min_value=0,
@@ -135,8 +136,20 @@ with st.form("registration_form"):
             "22:00 UTC to 23:59 UTC"
         ],
         index=0
+      
     )
-    
+    # Cannot do timing
+    bad_timing = st.selectbox(
+        "If there is a time you absolutely CANNOT do because you require sleep like other mere mortals, please select it*",
+        [
+            "00:00 UTC to 06:00 UTC",
+            "06:00 UTC to 12:00 UTC",
+            "12:00 UTC to 18:00 UTC",
+            "18:00 UTC to 23:59 UTC"
+        ],
+        index=0
+      
+    )
     # Submit Button
     submitted = st.form_submit_button("Submit Registration")
     
@@ -161,6 +174,7 @@ with st.form("registration_form"):
                 day_4,
                 day_5,
                 buff_timing
+                bad_timing
             ]
             
             try:
@@ -170,6 +184,7 @@ with st.form("registration_form"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Failed to save data: {str(e)}")
+
 
 
 
